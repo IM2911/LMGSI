@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TablaTaula + CSS</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Edat</th>
+            <th>Ciutat</th>
+        </tr>
+        <tr>
+            <td>María</td>
+            <td>28</td>
+            <td>Madrid</td>
+        </tr>
+        <tr>
+            <td>Carlos</td>
+            <td>34</td>
+            <td>Barcelona</td>
+        </tr>
+        <tr>
+            <td>Lucía</td>
+            <td>22</td>
+            <td>Valencia</td>
+        </tr>
+    </table>
+
+</body>
+</html>
