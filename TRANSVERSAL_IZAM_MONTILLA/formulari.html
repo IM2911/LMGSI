@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <title>Formulari - Suport Gaming</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><nav><ul class="menu">
+  <li><a href="index.html">Inici</a>
+  <li><a href="formulari.html">Formulari</a>
+  <li><a href="nosaltres.html">Nosaltres</a>
+</ul></nav></header>
+
+<main class="container">
+  <h1>Contacte / Suport</h1>
+  <p>Envia'ns una consulta sobre productes, recomanacions o incidències.</p>
+
+  <form method="get" action="form-success.html">
+    <label for="nom">Nom complet *</label>
+    <input id="nom" name="nom" type="text" placeholder="Nom complet" required>
+
+    <label for="email">Correu electrònic *</label>
+    <input id="email" name="email" type="email" placeholder="nom@exemple.com" required>
+
+    <label for="producte">Producte d'interès</label>
+    <select id="producte" name="producte">
+      <option value="teclat">Teclat</option>
+      <option value="ratoli">Ratolí</option>
+      <option value="casc">Casc</option>
+      <option value="altres">Altres</option>
+    </select>
+
+    <label>Prefereixes resposta per</label>
+    <label><input type="checkbox" name="pref" value="mail" checked> Correu</label>
+    <label><input type="checkbox" name="pref" value="tel"> Telèfon</label>
+    <label><input type="checkbox" name="pref" value="wh"> WhatsApp</label>
+
+    <label>Prioritat</label>
+    <label><input type="radio" name="prio" value="alta" checked> Alta</label>
+    <label><input type="radio" name="prio" value="normal"> Normal</label>
+    <label><input type="radio" name="prio" value="baixa"> Baixa</label>
+
+    <label for="missatge">Missatge</label>
+    <textarea id="missatge" name="missatge" rows="6" placeholder="Explica la teva consulta..."></textarea>
+
+    <button class="primary" type="submit">Enviar</button>
+  </form>
+</main>
+
+<footer>Projecte transversal — Izam Montilla</footer>
+</body>
+</html>
