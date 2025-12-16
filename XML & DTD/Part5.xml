@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cataleg_musica>
+
+    <llista_artistes>
+        <artista id="a1">
+            <nom>Coldplay</nom>
+            <pais>Regne Unit</pais>
+            <genere>Rock alternatiu</genere>
+        </artista>
+
+        <artista id="a2">
+            <nom>Adele</nom>
+            <pais>Regne Unit</pais>
+            <genere>Pop</genere>
+        </artista>
+
+        <artista id="a3">
+            <nom>Daft Punk</nom>
+            <genere>Electrònica</genere>
+        </artista>
+    </llista_artistes>
+
+    <llista_albumes>
+        <album id="al1">
+            <titol>Parachutes</titol>
+            <any>2000</any>
+            <artistes>
+                <artista_ref ref="a1"/>
+            </artistes>
+        </album>
+
+        <album id="al2">
+            <titol>25</titol>
+            <any>2015</any>
+            <artistes>
+                <artista_ref ref="a2"/>
+            </artistes>
+        </album>
+
+        <album id="al3">
+            <titol>Random Access Memories</titol>
+            <any>2013</any>
+            <artistes>
+                <artista_ref ref="a3"/>
+            </artistes>
+        </album>
+    </llista_albumes>
+
+    <llista_recomanacions_albumes>
+        <recomanacio ref="al1"/>
+        <recomanacio ref="al3"/>
+    </llista_recomanacions_albumes>
+
+</cataleg_musica>
