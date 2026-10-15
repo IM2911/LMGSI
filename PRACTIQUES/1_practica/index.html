@@ -1,55 +1,81 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cercador</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cercador de pel·lícules per descobrir títols i explorar el món del cinema.">
+    <title>Cercador de pel·lícules</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>
-		<a href="index.html">
-			<img src="img/TMDB_LOGO.png" alt="Logotip" height="25">
-		</a>
-		<nav>
-			<ul>
-				<li><a href="index.html">Buscador</a></li>
-				<li><a href="#resultats">Contacte</a></li>
-			</ul>
-		</nav>
-	</header>
+    <header>
+        <a class="logo" href="index.html">
+            <img src="img/TMDB-LOGO.png" alt="Logotip de TMDB" height="35">
+        </a>
 
-	<main>
-		<section aria-labelledby="titol-cerca">
-			<h1 id="titol-cerca">Buscar una pel·lícula</h1>
-			<p>Milions de títols, un sol cercador.</p>
-			<div>
-				<input type="text" aria-label="Paraula de cerca" placeholder="Cercar una pel·lícula...">
-				<button type="button">Cerca</button>
-			</div>
-		</section>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Buscador</a></li>
+                <li><a href="contacte.html">Contacte</a></li>
+            </ul>
+        </nav>
+    </header>
 
-		<section id="resultats" aria-labelledby="titol-resultats">
-			<h2 id="titol-resultats">Resultats</h2>
-			<article>
-                <img src="img/ELCONTABLE2.jpg" alt="Logotip" height="350">
-				<h3>EL CONTABLE 2</h3>
-				<p>Una gran pel·lícula de l'any 2023, <br>dirigit per un gran realitzador.</p>
-			</article>
-			<article>
-                <img src="img/6ENLASOMBRA.jpg" alt="Logotip" height="420">
-				<h3>6 EN LA SOMBRA</h3>
-				<p>Una gran pel·lícula de l'any 2021, <br>dirigit per un gran realitzador.</p>
-			</article>
-			<article>
-                <img src="img/THENORTHMAN.jpg" alt="Logotip" height="420">
-				<h3>THE NORTHMAN</h3>
-				<p>Una gran pel·lícula de l'any 2020, <br>dirigit per un gran realitzador.</p>
-			</article>
-		</section>
-	</main>
+    <main>
+        <section class="hero" aria-labelledby="titol-cerca">
+            <h1 id="titol-cerca">Buscar una pel·lícula</h1>
+            <p>Milions de títols, un sol cercador.</p>
 
-	<footer>
-		<p>© 2024 Cercador d'Izam</p>
-	</footer>
+            <form class="search-form" method="get"
+                  action="https://www.themoviedb.org/search">
+                <label for="pelicula" class="visually-hidden">
+                    Títol de la pel·lícula
+                </label>
+                <input type="search" id="pelicula" name="query"
+                       placeholder="Cercar una pel·lícula..."
+                       required>
+                <button type="submit">Cerca</button>
+            </form>
+        </section>
+
+        <section class="results" id="resultats"
+                 aria-labelledby="titol-resultats">
+            <h2 id="titol-resultats">Resultats</h2>
+
+            <div class="movie-grid">
+                <article class="movie-card">
+                    <img src="img/ELCONTABLE2.jpg"
+                         alt="Cartell de la pel·lícula El contable 2">
+                    <div class="movie-info">
+                        <h3>EL CONTABLE 2</h3>
+                        <p>Una gran pel·lícula d'acció i suspens protagonitzada per un comptable molt especial.</p>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <img src="img/6ENLASOMBRA.jpg"
+                         alt="Cartell de la pel·lícula 6 en la sombra">
+                    <div class="movie-info">
+                        <h3>6 EN LA SOMBRA</h3>
+                        <p>Un grup d'agents secrets fingeix la seva mort per combatre els criminals més perillosos.</p>
+                    </div>
+                </article>
+
+                <article class="movie-card">
+                    <img src="img/THENORTHMAN.jpg"
+                         alt="Cartell de la pel·lícula The Northman">
+                    <div class="movie-info">
+                        <h3>THE NORTHMAN</h3>
+                        <p>Una història èpica de venjança, guerrers i llegendes ambientada en el món dels víkings.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Cercador d'Izam</p>
+    </footer>
 </body>
 </html>
