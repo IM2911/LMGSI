@@ -1,741 +1,221 @@
-/*
-body {
-    background-color: #f0f0f0;
-    font-family:'Times New', Times, serif
-    margin: 0;
-}
-
-header {
-    background-color: #032541;
-    color: white;
-    padding: 20px;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    margin-right: 20px;
-    text-decoration: none;
-}
-
-main {
-    margin: 40px;
-}
-
-h1 {
-    color: #032541;
-}
-
-input {
-    padding: 10px;
-    width: 250px;
-}
-
-button {
-    background-color: #01b4e4;
-    color: white;
-    padding: 10px;
-    border: none;
-}
-*/
-
-
-/* =========================================
-   CERCADOR DE PEL·LÍCULES
-   Disseny cinematogràfic modern
-========================================= */
-
-/* 1. CONFIGURACIÓ GENERAL */
-
 :root {
-    --fons: #071522;
-    --fons-secundari: #0d1f30;
-    --targeta: #10283d;
-    --blau: #032541;
-    --turquesa: #01b4e4;
-    --verd: #90cea1;
-    --blanc: #ffffff;
-    --text: #d7e1ea;
-    --text-suau: #9eb0c0;
-    --vora: rgba(144, 206, 161, 0.18);
-    --radi: 16px;
-    --transicio: 0.3s ease;
+    --oscuro: #0b1f4b;
+    --medio: #1a3a7a;
+    --claro: #4da3ff;
+    --suave: #eaf3ff;
+    --blanco: #ffffff;
+    --sombra: 0 6px 18px rgba(11, 31, 75, 0.18);
 }
+ 
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* { 
+    box-sizing: border-box; 
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
+ 
 body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--oscuro);
+    background: linear-gradient(180deg, var(--suave), var(--blanco));
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: var(--fons);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
+}
+ 
+img { 
+    max-width: 100%; 
 }
 
-h1,
-h2,
-h3 {
-    color: var(--blanc);
-    line-height: 1.25;
+a { 
+    color: var(--claro); 
+    text-decoration: none; 
 }
-
-h1,
-h2 {
-    font-family: Georgia, "Times New Roman", serif;
-}
-
-h1 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-}
-
-h3 {
-    font-size: 1.15rem;
-}
-
-p {
-    color: var(--text);
-}
-
-a {
-    color: var(--turquesa);
-    text-decoration: none;
-    transition: color var(--transicio);
-}
-
-a:hover {
-    color: var(--verd);
-}
-
-img {
-    max-width: 100%;
-}
-
-button,
-input,
-textarea {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-::selection {
-    background: var(--turquesa);
-    color: var(--blau);
-}
-
-
-/* 2. CAPÇALERA I NAVEGACIÓ */
-
-header {
-    position: relative;
-    z-index: 1;
-    background: rgba(3, 37, 65, 0.96);
-    color: var(--blanc);
-    padding: 18px 6%;
-    border-bottom: 1px solid rgba(1, 180, 228, 0.35);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-}
-
-header table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-header td {
-    vertical-align: middle;
-    padding: 4px 0;
-}
-
-header img {
-    display: block;
-    width: auto;
-    height: 34px;
-    object-fit: contain;
-}
-
-header nav {
-    text-align: right;
-}
-
-header nav a {
-    display: inline-block;
-    color: var(--blanc);
-    font-size: 0.95rem;
-    font-weight: bold;
-    margin-left: 22px;
-    padding: 7px 0;
-    border-bottom: 2px solid transparent;
-    transition: color var(--transicio),
-                border-color var(--transicio);
-}
-
-header nav a:hover {
-    color: var(--turquesa);
-    border-bottom-color: var(--turquesa);
-    text-decoration: none;
-}
-
-header hr {
-    display: none;
-}
-
-
-/* 3. CAPÇALERA DE CONTACTE */
-
-header center {
-    padding: 40px 0 28px;
-}
-
-header center h1 {
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
-header center p {
-    color: var(--text-suau);
-    font-size: 1.05rem;
-}
-
-header center h1::after {
-    content: "";
-    display: block;
-    width: 65px;
-    height: 4px;
-    margin: 20px auto 0;
-    background: var(--turquesa);
-    border-radius: 10px;
-}
-
-
-/* 4. CONTINGUT PRINCIPAL */
-
-main {
-    flex: 1;
-    width: min(1120px, 90%);
-    margin: 55px auto;
-}
-
-section {
-    margin-bottom: 55px;
-}
-
-section > h2 {
-    margin-bottom: 25px;
-}
-
-section > h2::after {
-    content: "";
-    display: block;
-    width: 45px;
-    height: 3px;
-    margin-top: 12px;
-    background: var(--turquesa);
-    border-radius: 5px;
-}
-
+ 
 hr {
-    height: 1px;
     border: 0;
-    background: var(--vora);
-    margin: 35px 0;
+    height: 2px;
+    margin: 1rem 0;
+    background: linear-gradient(90deg, transparent, var(--claro), transparent);
 }
-
-
-/* 5. BÀNER DEL CERCADOR */
-
-.hero {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 65px 25px;
-    border: 1px solid var(--vora);
-    border-radius: 22px;
-    background:
-        radial-gradient(
-            ellipse at 80% 15%,
-            rgba(1, 180, 228, 0.18),
-            transparent 45%
-        ),
-        linear-gradient(135deg, #032541, #10283d 65%, #071522);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-}
-
-.hero h1 {
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.hero p {
-    margin-bottom: 32px;
-    color: var(--text-suau);
-    font-size: 1.1rem;
-}
-
-.hero h1::after {
-    content: "";
-    display: block;
-    width: 55px;
-    height: 4px;
-    margin: 18px auto 0;
-    background: var(--verd);
-    border-radius: 5px;
-}
-
-
-/* 6. FORMULARI DE CERCA */
-
-.search-form {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: min(620px, 100%);
-    padding: 7px;
-    background: var(--blanc);
-    border-radius: 50px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.search-form input {
-    flex: 1;
-    width: 0;
-    min-width: 0;
-    padding: 12px 18px;
-    color: #172b3b;
-    background: transparent;
-    border: none;
-    border-radius: 30px;
-    outline: none;
-}
-
-.search-form input::placeholder {
-    color: #718096;
-}
-
-.search-form input:focus {
-    box-shadow: inset 0 0 0 2px var(--turquesa);
-}
-
-.search-form button {
-    flex-shrink: 0;
-    padding: 12px 28px;
-    color: var(--blau);
-    background: var(--verd);
-    border: none;
-    border-radius: 40px;
-    font-weight: bold;
-    transition: background var(--transicio),
-                transform var(--transicio);
-}
-
-.search-form button:hover {
-    color: var(--blau);
-    background: #b2e5be;
-    transform: scale(1.03);
-}
-
-
-/* 7. RESULTATS I TARGETES DE PEL·LÍCULES */
-
-.results > h2 {
-    margin-bottom: 30px;
-}
-
-.movie-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
-    align-items: stretch;
-}
-
-.movie-card {
-    min-width: 0;
-    overflow: hidden;
-    background: var(--targeta);
-    border: 1px solid var(--vora);
-    border-radius: var(--radi);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-    transition: transform var(--transicio),
-                box-shadow var(--transicio),
-                border-color var(--transicio);
-}
-
-.movie-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(1, 180, 228, 0.65);
-    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
-}
-
-.movie-card img {
-    display: block;
-    width: 100%;
-    height: 390px;
-    object-fit: cover;
-    object-position: center;
-    background: var(--blau);
-    transition: transform 0.5s ease;
-}
-
-.movie-card:hover img {
-    transform: scale(1.035);
-}
-
-.movie-card .movie-info {
-    position: relative;
-    padding: 22px;
-}
-
-.movie-info h3 {
-    margin-bottom: 12px;
-    color: var(--verd);
-    letter-spacing: 0.4px;
-}
-
-.movie-info p {
-    color: var(--text-suau);
-    font-size: 0.94rem;
-    line-height: 1.75;
-}
-
-
-/* 8. EQUIP DE LA PÀGINA DE CONTACTE */
-
-main section center img {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    max-height: 360px;
-    object-fit: cover;
-    margin: 25px auto;
-    border: 1px solid rgba(1, 180, 228, 0.5);
-    border-radius: var(--radi);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-}
-
-main section center h2 {
-    margin-bottom: 25px;
-}
-
-main section center h3 {
-    margin: 15px 0 8px;
-    color: var(--verd);
-    font-size: 1.35rem;
-}
-
-main section center strong {
-    color: var(--text-suau);
-    font-weight: normal;
-}
-
-main section center + hr {
-    margin: 35px 0;
-}
-
-main section > p {
-    max-width: 800px;
-    margin-bottom: 18px;
-    color: var(--text-suau);
-}
-
-
-/* 9. FORMULARI DE CONTACTE */
-
-main section form:not(.search-form) {
-    max-width: 720px;
-    padding: 32px;
-    background:
-        linear-gradient(145deg, rgba(16, 40, 61, 0.98), rgba(7, 21, 34, 0.98));
-    border: 1px solid var(--vora);
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-main section form:not(.search-form) p {
-    margin-bottom: 22px;
-}
-
-main section form:not(.search-form) label {
-    display: inline-block;
-    margin-bottom: 5px;
-    color: var(--blanc);
-    font-size: 0.95rem;
-}
-
-main section form:not(.search-form) label strong {
-    font-weight: 600;
-}
-
-main section form:not(.search-form) input,
-main section form:not(.search-form) textarea {
-    display: block;
-    width: 100%;
-    padding: 14px 16px;
-    color: var(--blanc);
-    background: #091a29;
-    border: 1px solid #29465e;
-    border-radius: 9px;
-    outline: none;
-    transition: border-color var(--transicio),
-                box-shadow var(--transicio);
-}
-
-main section form:not(.search-form) input::placeholder,
-main section form:not(.search-form) textarea::placeholder {
-    color: #7f95a8;
-}
-
-main section form:not(.search-form) input:focus,
-main section form:not(.search-form) textarea:focus {
-    border-color: var(--turquesa);
-    box-shadow: 0 0 0 3px rgba(1, 180, 228, 0.13);
-}
-
-main section form:not(.search-form) textarea {
-    min-height: 150px;
-    resize: vertical;
-}
-
-main section form:not(.search-form) button {
-    display: inline-block;
-    padding: 13px 27px;
-    color: var(--blau);
-    background: var(--verd);
-    border: none;
-    border-radius: 9px;
-    font-weight: bold;
-    transition: background var(--transicio),
-                transform var(--transicio),
-                box-shadow var(--transicio);
-}
-
-main section form:not(.search-form) button:hover {
-    background: #b2e5be;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-
-/* 10. PEU DE PÀGINA */
-
-footer {
-    margin-top: auto;
-    padding: 28px 20px;
-    text-align: center;
-    background: #031626;
-    border-top: 1px solid var(--vora);
-}
-
-footer p {
-    margin-bottom: 8px;
-    color: var(--text-suau);
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: var(--verd);
-    font-size: 0.92rem;
-}
-
-footer a:hover {
-    color: var(--turquesa);
-}
-
-
-/* 11. ACCESSIBILITAT */
-
+ 
 .visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
-    padding: 0;
-    margin: -1px;
     overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
+    clip: rect(0 0 0 0);
+}
+ 
+header {
+    padding: 0.8rem 2rem;
+    color: var(--blanco);
+    background: linear-gradient(90deg, var(--oscuro), var(--medio));
+    border-bottom: 4px solid var(--claro);
+    box-shadow: var(--sombra);
+}
+ 
+header img { 
+    display: block; 
+    height: 30px; 
+    width: auto; 
+}
+
+header h1 { 
+    margin: 0.5rem 0; 
+    letter-spacing: 2px; 
+}
+ 
+nav a {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    color: var(--blanco);
+    font-weight: 600;
+}
+ 
+nav a:hover { 
+    color: var(--oscuro); 
+    background: var(--claro); 
+}
+
+main { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 2rem 1rem; 
+}
+ 
+main > section:not(.hero):not(.results) {
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+}
+ 
+main img[alt*="perfil"] {
+    border-radius: 14px;
+    border: 4px solid var(--claro);
+    box-shadow: var(--sombra);
+}
+ 
+.hero {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    color: var(--blanco);
+    background: linear-gradient(135deg, var(--oscuro), var(--medio) 55%, var(--claro));
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+}
+ 
+.hero h1 { 
+    margin: 0 0 0.3rem; 
+    font-size: 2.4rem; 
+}
+
+.hero p { 
+    margin: 0 0 1.5rem; 
+    opacity: 0.9; 
+}
+ 
+.search-form { display: flex; gap: 0.5rem; max-width: 520px; margin: 0 auto; }
+ 
+.search-form input {
+    flex: 1;
+    padding-left: 1.2rem;
+    border-radius: 30px;
+    border-color: transparent;
+}
+ 
+.search-form button { 
+    border-radius: 30px; 
+    color: var(--oscuro); 
+    background: var(--blanco); 
+}
+
+.search-form button:hover { 
+    color: var(--blanco); 
+    background: var(--oscuro); 
+}
+
+input, textarea {
+    padding: 0.7rem 0.9rem;
+    border: 2px solid var(--suave);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--oscuro);
+    background: var(--suave);
+}
+ 
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--claro);
+    background: var(--blanco);
+}
+ 
+textarea { 
+    width: 100%; 
+    max-width: 500px; 
+}
+ 
+button {
+    padding: 0.7rem 1.6rem;
     border: 0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--blanco);
+    background: var(--claro);
+    transition: background 0.2s, transform 0.2s;
+}
+ 
+button:hover { 
+    background: var(--oscuro); 
+    transform: translateY(-2px); 
 }
 
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--verd);
-    outline-offset: 4px;
+.results { margin-top: 2.5rem; }
+ 
+.results h2 {
+    display: inline-block;
+    padding-bottom: 0.2rem;
+    border-bottom: 4px solid var(--claro);
 }
-
-
-/* 12. TABLETS */
-
-@media (max-width: 850px) {
-    main {
-        width: 92%;
-        margin: 38px auto;
-    }
-
-    .movie-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .movie-card img {
-        height: 340px;
-    }
-
-    header {
-        padding: 16px 4%;
-    }
-
-    header nav a {
-        margin-left: 14px;
-    }
+ 
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
 }
-
-
-/* 13. MÒBILS */
-
-@media (max-width: 520px) {
-    body {
-        font-size: 15px;
-    }
-
-    header {
-        padding: 14px 5%;
-    }
-
-    header table,
-    header tbody,
-    header tr,
-    header td {
-        display: block;
-        width: 100%;
-    }
-
-    header img {
-        height: 30px;
-    }
-
-    header nav {
-        margin-top: 12px;
-        text-align: left;
-    }
-
-    header nav a {
-        margin: 0 18px 0 0;
-        font-size: 0.9rem;
-    }
-
-    header center {
-        padding: 30px 0 15px;
-    }
-
-    header center h1 {
-        font-size: 1.8rem;
-    }
-
-    main {
-        width: 90%;
-        margin: 30px auto;
-    }
-
-    section {
-        margin-bottom: 38px;
-    }
-
-    .hero {
-        min-height: 300px;
-        padding: 38px 17px;
-        border-radius: 15px;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .search-form {
-        flex-direction: column;
-        padding: 10px;
-        border-radius: 15px;
-        background: transparent;
-        box-shadow: none;
-    }
-
-    .search-form input {
-        width: 100%;
-        padding: 14px;
-        background: white;
-        border-radius: 10px;
-    }
-
-    .search-form button {
-        width: 100%;
-        border-radius: 10px;
-    }
-
-    .movie-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .movie-card img {
-        height: auto;
-        max-height: 500px;
-        object-fit: contain;
-    }
-
-    .movie-info {
-        padding: 20px;
-    }
-
-    main section form:not(.search-form) {
-        padding: 22px 17px;
-    }
-
-    main section center img {
-        max-height: 280px;
-    }
-
-    footer {
-        padding: 24px 15px;
-    }
+ 
+.movie-card {
+    overflow: hidden;
+    background: var(--blanco);
+    border-radius: 14px;
+    box-shadow: var(--sombra);
+    transition: transform 0.25s;
 }
-
-
-/* 14. RESPECTAR LA REDUCCIÓ D'ANIMACIONS */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-    }
+ 
+.movie-card:hover { transform: translateY(-6px); }
+ 
+.movie-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-bottom: 4px solid var(--claro);
 }
+ 
+.movie-info { padding: 1rem 1.2rem 1.3rem; }
+.movie-info h3 { margin: 0 0 0.4rem; }
+.movie-info p { margin: 0; font-size: 0.92rem; }
+ 
+
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--blanco);
+    background: var(--oscuro);
+    border-top: 4px solid var(--claro);
+}
+ 
