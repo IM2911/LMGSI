@@ -1,0 +1,119 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f5ef;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+header {
+    background-color: #14213d;
+    color: white;
+    text-align: center;
+    padding: 1px 10px 10px;
+}
+
+header h1 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin: 3px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+}
+
+nav a:hover {
+    color: #fca311;
+    text-decoration: underline;
+}
+
+.banner {
+    background-image: url("img/cafe.jpg");
+    min-height: 300px;
+    padding: 25px 10px;
+    text-align: center;
+    color: white;
+}
+
+
+.boto {
+    display: inline-block;
+    background-color: rgb(252, 163, 17);
+    color: #14213d;
+    padding: 10px 18px;
+    margin-top: 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boto:hover {
+    background-color: white;
+}
+
+main {
+    width: 500px;
+    max-width: 90%;
+    margin: 20px auto 25px;
+}
+
+.targeta {
+    background-color: white;
+    border: 2px solid #14213d;
+    border-radius: 9px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    margin-bottom: 13px;
+}
+
+.targeta h3 {
+    color: #14213d;
+    font-size: 15px;
+    font-style: italic;
+    margin: 2px 0 7px;
+}
+
+.targeta p {
+    margin: 5px 0;
+}
+
+.preu {
+    color: rgb(218, 132, 11);
+    font-weight: bold;
+}
+
+.horari {
+    width: 395px;
+    max-width: 100%;
+    margin: 25px auto;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(252, 163, 17, 0.15);
+    border: 2px dashed #fca311;
+    border-radius: 9px;
+}
+
+.horari h3 {
+    font-size: 16px;
+}
+
+footer {
+    background-color: #14213d;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 10px;
+}
