@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -8,79 +9,105 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <header>
-        <table width="100%">
-            <tr>
-                <td>
-                    <a href="index.html">
-                        <img src="img/TMDB-LOGO.png" alt="Logotip TMDB" height="30">
-                    </a>
-                </td>
-                <td align="right">
-                    <nav>
-                        <a href="index.html">Cercador</a> |
-                        <a href="contacte.html">Contacte</a>
-                    </nav>
-                </td>
-            </tr>
-        </table>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/TMDB-LOGO.png"
+                    alt="Logotip TMDB"
+                    height="30">
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Cercador</a>
+                <a href="contacte.html">Contacte</a>
+            </nav>
+        </div>
     </header>
 
     <main>
+
         <section class="hero" aria-labelledby="titol-cerca">
             <h1 id="titol-cerca">Buscar una pel·lícula</h1>
+
             <p>Milions de títols, un sol cercador.</p>
 
-            <form class="search-form" method="get"
+            <form class="search-form"
+                  method="get"
                   action="https://www.themoviedb.org/search">
+
                 <label for="pelicula" class="visually-hidden">
                     Títol de la pel·lícula
                 </label>
-                <input type="search" id="pelicula" name="query"
+
+                <input type="search"
+                       id="pelicula"
+                       name="query"
                        placeholder="Cercar una pel·lícula..."
                        required>
+
                 <button type="submit">Cerca</button>
+
             </form>
         </section>
 
-        <section class="results" id="resultats"
+        <section class="results"
+                 id="resultats"
                  aria-labelledby="titol-resultats">
+
             <h2 id="titol-resultats">Resultats</h2>
 
             <div class="movie-grid">
+
                 <article class="movie-card">
                     <img src="img/ELCONTABLE2.jpg"
                          alt="Cartell de la pel·lícula El contable 2">
+
                     <div class="movie-info">
                         <h3>EL CONTABLE 2</h3>
-                        <p>Una gran pel·lícula d'acció i suspens protagonitzada per un comptable molt especial.</p>
+                        <p>
+                            Una gran pel·lícula d'acció i suspens
+                            protagonitzada per un comptable molt especial.
+                        </p>
                     </div>
                 </article>
 
                 <article class="movie-card">
                     <img src="img/6ENLASOMBRA.jpg"
                          alt="Cartell de la pel·lícula 6 en la sombra">
+
                     <div class="movie-info">
                         <h3>6 EN LA SOMBRA</h3>
-                        <p>Un grup d'agents secrets fingeix la seva mort per combatre els criminals més perillosos.</p>
+                        <p>
+                            Un grup d'agents secrets fingeix la seva mort
+                            per combatre els criminals més perillosos.
+                        </p>
                     </div>
                 </article>
 
                 <article class="movie-card">
                     <img src="img/THENORTHMAN.jpg"
                          alt="Cartell de la pel·lícula The Northman">
+
                     <div class="movie-info">
                         <h3>THE NORTHMAN</h3>
-                        <p>Una història èpica de venjança, guerrers i llegendes ambientada en el món dels víkings.</p>
+                        <p>
+                            Una història èpica de venjança, guerrers
+                            i llegendes ambientada en el món dels víkings.
+                        </p>
                     </div>
                 </article>
+
             </div>
         </section>
+
     </main>
 
     <footer>
         <p>© 2026 Cercador d'Izam</p>
     </footer>
+
 </body>
 </html>

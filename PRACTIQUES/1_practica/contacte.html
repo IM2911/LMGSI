@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ca">
 
@@ -12,45 +13,55 @@
 <body>
 
     <header>
-        <table width="100%">
-            <tr>
-                <td>
-                    <a href="index.html">
-                        <img src="img/TMDB-LOGO.png" alt="Logotip TMDB" height="30">
-                    </a>
-                </td>
-                <td align="right">
-                    <nav>
-                        <a href="index.html">Buscador</a> |
-                        <a href="contacte.html">Contacte</a>
-                    </nav>
-                </td>
-            </tr>
-        </table>
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                <img src="img/TMDB-LOGO.png"
+                     alt="Logotip TMDB"
+                     height="30">
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Cercador</a>
+                <a href="contacte.html">Contacte</a>
+            </nav>
+
+        </div>
 
         <hr>
 
-        <center>
+        <section class="contact-hero">
             <h1>CONTACTA AMB NOSALTRES</h1>
             <p>Tens algun dubte o suggeriment? Escriu-nos.</p>
-        </center>
+        </section>
 
         <hr>
+
     </header>
 
     <main>
-        <section>
-            <center>
-                <h2>El nostre equip</h2>
 
-                <img src="img/TEAM.jpg" alt="Fotografia de perfil" width="500" height="300">
+        <section class="team">
 
-                <h3>Nom Cognom1 Cognom2</h3>
+            <h2>El nostre equip</h2>
 
-                <p><strong>Alumne/a - Desenvolupament web</strong></p>
-            </center>
+            <img src="img/TEAM.jpg"
+                 alt="Fotografia de perfil"
+                 width="500"
+                 height="300">
 
-            <hr>
+            <h3>Nom Cognom1 Cognom2</h3>
+
+            <p>
+                <strong>Alumne/a - Desenvolupament web</strong>
+            </p>
+
+        </section>
+
+        <hr>
+
+        <section class="contact-info">
 
             <p>
                 Benvingut al nostre cercador de pel·lícules!
@@ -62,46 +73,93 @@
                 Estarem encantats d'escoltar les teves idees
                 i ajudar-te en tot el que necessitis.
             </p>
+
         </section>
 
-        <section>
+        <section class="contact-form">
+
             <h2>Envia'ns un missatge</h2>
 
             <form action="#" method="get">
+
                 <p>
-                    <label for="nom"><strong>Nom i cognoms</strong></label><br>
-                    <input type="text" id="nom" name="nom" size="45" placeholder="El teu nom complet" required>
+                    <label for="nom">
+                        <strong>Nom i cognoms</strong>
+                    </label>
+
+                    <br>
+
+                    <input type="text"
+                           id="nom"
+                           name="nom"
+                           size="45"
+                           placeholder="El teu nom complet"
+                           required>
                 </p>
 
                 <p>
-                    <label for="correu"><strong>Correu electrònic</strong></label><br>
-                    <input type="email" id="correu" name="correu" size="45" placeholder="nom@exemple.cat" required>
+                    <label for="correu">
+                        <strong>Correu electrònic</strong>
+                    </label>
+
+                    <br>
+
+                    <input type="email"
+                           id="correu"
+                           name="correu"
+                           size="45"
+                           placeholder="nom@exemple.cat"
+                           required>
                 </p>
 
                 <p>
-                    <label for="assumpte"><strong>Assumpte</strong></label><br>
-                    <input type="text" id="assumpte" name="assumpte" size="45"
-                        placeholder="Sobre què ens vols escriure?" required>
+                    <label for="assumpte">
+                        <strong>Assumpte</strong>
+                    </label>
+
+                    <br>
+
+                    <input type="text"
+                           id="assumpte"
+                           name="assumpte"
+                           size="45"
+                           placeholder="Sobre què ens vols escriure?"
+                           required>
                 </p>
 
                 <p>
-                    <label for="missatge"><strong>Missatge</strong></label><br>
-                    <textarea id="missatge" name="missatge" rows="6" cols="45"
-                        placeholder="Escriu aquí el teu missatge..." required></textarea>
+                    <label for="missatge">
+                        <strong>Missatge</strong>
+                    </label>
+
+                    <br>
+
+                    <textarea id="missatge"
+                              name="missatge"
+                              rows="6"
+                              cols="45"
+                              placeholder="Escriu aquí el teu missatge..."
+                              required></textarea>
                 </p>
 
-                <button type="submit">Enviar missatge</button>
+                <button type="submit">
+                    Enviar missatge
+                </button>
+
             </form>
 
+        </section>
+
     </main>
-    </section>
+
     <hr>
 
-    <footer>
-        <center>
-            <p>© 2026 Cercador de pel·lícules - Maqueta de disseny</p>
-            <a href="index.html">Tornar al cercador</a>
-        </center>
+    <footer class="footer-contact">
+
+        <p>© 2026 Cercador de pel·lícules - Maqueta de disseny</p>
+
+        <a href="index.html">Tornar al cercador</a>
+
     </footer>
 
 </body>
